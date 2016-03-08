@@ -1,9 +1,10 @@
+#coding:utf-8
 import re
 from login import *
-      
+ 
 
 def get_page(url):#get the content
-        sock = urllib.request.urlopen(url)
+        sock = urllib2.urlopen(url)
         page = sock.read().decode('utf-8')
         return page
 
@@ -49,6 +50,7 @@ if __name__ == '__main__':
     path = r''#file path
     rr = Renren()
     home = rr.login(email,password)
+    print home
     get_blog(home,path)
     	
     
